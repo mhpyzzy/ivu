@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+@include floatCol;
+@include  creatCol;
+
+@media (max-width: 768px) {
+    @include  creatCol('xs')
+}
+@media (min-width: 768px) {
+    @include  creatCol('sm')
+}
+@media (min-width: 992px) {
+    @include  creatCol('md')
+}
+@media (min-width: 1200px) {
+    @include  creatCol('lg')
+}
+

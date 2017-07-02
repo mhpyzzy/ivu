@@ -1,0 +1,39 @@
+$colNum:24;
+@mixin creatCol($type:''){
+    
+    @if($type==''){
+        @for $i from 1 through $colNum{
+            .i-col-#{$i}{
+                width:percentage($i/24);
+            }
+            .i-col-offset-#{$i}{
+                margin-left:percentage($i/24);
+            }
+            .i-col-push-#{$i}{
+                left:percentage($i/24);
+            }
+            .i-col-pull-#{$i}{
+                right:percentage($i/24);
+            }
+        };
+    } @else {
+        @for $i from 1 through $colNum{
+            .i-col-#{$type}-#{$i}{
+                width:percentage($i/24);
+            }
+        };
+    }
+
+}
+
+@mixin floatCol(){
+    $col_list:'';
+     @for $i from 1 through $colNum{
+         $col_list:append($col_list,',.i-col-#{$i}')
+     }
+
+    #{$col_list}{
+        position: relative;
+        float:left;
+    }
+}

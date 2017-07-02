@@ -1,0 +1,9 @@
+@mixin clearfix() {
+  &:after {
+    content: " "; // 1
+    display: block; // 2
+    height:0;
+    clear:both;
+    visibility: hidden;
+  }
+}

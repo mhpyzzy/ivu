@@ -1,0 +1,43 @@
+
+// colors************************************
+// 主色调-------------------------------
+// $base-color
+$primary: #20a0ff !default;
+$primary_light:lighten($primary,8%) !default;
+$primary_dark:darken($primary,15%) !default;
+
+//辅助色-------------------------------
+$success: #13ce66 !default;
+$warning: #f7ba2a !default;
+$danger: #ff4949 !default;
+$info: #50bfff !default;
+
+//黑.白.灰色系-------------------------
+$black:#222 !default;
+$black_light:lighten($black,15%) !default;
+$black_lighter:lighten($black,30%) !default;
+
+$white:#fff !default;
+$white_drak:darken($white,15%) !default;
+
+$gray:#D3DCE6 !default;
+$gray_light:lighten($gray,5%) !default;
+$gray_lighter:lighten($gray,10%) !default;
+
+//link****************************************
+$link:$black_light !default;
+$link_hover:$primary !default;
+
+// border*************************************
+$border-width:1px !default;
+$border-style:solid !default;
+$border-color:$gray_light !default;
+$border-hover:$gray !default;
+$border-radius-l:4px !default;
+$border-radius-s:2px !default;
+$border-radius-c:50% !default;
+
+//font*****************************************
+$font_size:14px !default;
+$font_color:$black !default;
+$font_disabled:#bbb !default;

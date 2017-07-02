@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+// mixins
+@import './mixins/mixins';
+
+@import './components/var';
+@import './components/reset';
+
+//grid
+@import './components/iRow';
+@import './components/iCol';
