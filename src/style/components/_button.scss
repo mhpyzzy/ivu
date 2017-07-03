@@ -1,0 +1,14 @@
+//common
+$button_font_size:14px !default;
+$button_border_radius:$border_radius_normal !default;
+$button_padding_vertical:10px;
+$button_padding_horizontal:15px;
+
+//size large
+$button_size_list:'large','small','mini';
+// $button_large
+
+
+//other
+$prefix_button:'i-button';  //前缀
+$buttonType_list:'default,primary,success,warning,danger,info,disabled';  //类型

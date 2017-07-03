@@ -1,18 +1,20 @@
 @charset "UTF-8";
 
-@include floatCol;
-@include  creatCol;
+/*i-col*/
+$prefix_col:'i-col'; //前缀
+$colNum:24;  //总列数
+//屏幕宽度
+$screenSizeMap:(
+    xs:768px,
+    sm:768px,
+    md:992px,
+    lg:1200px
+);
 
-@media (max-width: 768px) {
-    @include  creatCol('xs')
-}
-@media (min-width: 768px) {
-    @include  creatCol('sm')
-}
-@media (min-width: 992px) {
-    @include  creatCol('md')
-}
-@media (min-width: 1200px) {
-    @include  creatCol('lg')
-}
+//浮动
+@include floatCol;
+//
+@include creatCol;
+//媒体查询
+@include media_col($screenSizeMap);
 

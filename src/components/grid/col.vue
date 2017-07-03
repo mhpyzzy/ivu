@@ -36,15 +36,16 @@
                 let _gutter=parent ? parent.gutter : 0;
 
                 if(_gutter){
-                    _reset.paddingLeft=`${_gutter/2}px`;
-                    _reset.paddingRight=`${_gutter/2}px`;
+                    _reset.paddingLeft = _reset.paddingRight = String(_gutter).replace(/(\d+)(px|rem)?/,function($0,$1,$2){
+                        let _unit=$2?$2:'px';
+                        return parseInt($1)/2 + _unit
+                    });
                 }
                 return _reset
             },
             classes(){
                return  ['span','xs','sm','md','lg', 'offset', 'pull', 'push'].map((prop)=>{
                     if(!!this[prop]){
-                        console.log(this[prop])
                       return  prop !== 'span'? `i-col-${prop}-${this[prop]}`: `i-col-${this[prop]}`
                     }
                 })

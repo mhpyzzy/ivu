@@ -1,12 +1,12 @@
 @charset "UTF-8";
-
-.i_container{
+/* i-row*/
+.i-container{
     overflow: hidden;
 }
-.i_row{
+.i-row{
     @include clearfix;
 }
 
-.i_row_flex{
+.i-row_flex{
     display: flex;
 }
