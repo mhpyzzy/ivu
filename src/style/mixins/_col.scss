@@ -1,39 +1,54 @@
-$colNum:24;
-@mixin creatCol($type:''){
+
+@mixin creatCol($prefix_col:'i-col',$type:'',$colNum:24){
     
     @if($type==''){
         @for $i from 1 through $colNum{
-            .i-col-#{$i}{
-                width:percentage($i/24);
+            .#{$prefix_col}-#{$i}{
+                width:percentage($i/$colNum);
             }
-            .i-col-offset-#{$i}{
-                margin-left:percentage($i/24);
+            .#{$prefix_col}-offset-#{$i}{
+                margin-left:percentage($i/$colNum);
             }
-            .i-col-push-#{$i}{
-                left:percentage($i/24);
+            .#{$prefix_col}-push-#{$i}{
+                left:percentage($i/$colNum);
             }
-            .i-col-pull-#{$i}{
-                right:percentage($i/24);
+            .#{$prefix_col}-pull-#{$i}{
+                right:percentage($i/$colNum);
             }
         };
     } @else {
         @for $i from 1 through $colNum{
-            .i-col-#{$type}-#{$i}{
-                width:percentage($i/24);
+            .#{$prefix_col}-#{$type}-#{$i}{
+                width:percentage($i/$colNum);
             }
         };
     }
 
 }
 
-@mixin floatCol(){
+@mixin floatCol($prefix_col:'i-col',$colNum:24){
     $col_list:'';
      @for $i from 1 through $colNum{
-         $col_list:append($col_list,',.i-col-#{$i}')
+         $col_list:append($col_list,',.#{$prefix_col}-#{$i}')
      }
 
     #{$col_list}{
         position: relative;
         float:left;
+    }
+}
+
+
+@mixin media_col($screenSizeMap){
+    @each $key,$value in $screenSizeMap{
+        @if($key=='xs'){
+            @media (max-width: $value) {
+                @include  creatCol($type:#{$key})
+            } 
+        }@else{
+            @media (min-width: $value) {
+                @include  creatCol($type:#{$key})
+            } 
+        }
     }
 }

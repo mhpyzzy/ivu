@@ -17,6 +17,11 @@ $black:#222 !default;
 $black_light:lighten($black,15%) !default;
 $black_lighter:lighten($black,30%) !default;
 
+$silver:#8492a6 !default;
+$silver_light:lighten($silver,10%) !default;
+$silver_lighter:lighten($silver,20%) !default;
+
+
 $white:#fff !default;
 $white_drak:darken($white,15%) !default;
 
@@ -29,15 +34,25 @@ $link:$black_light !default;
 $link_hover:$primary !default;
 
 // border*************************************
-$border-width:1px !default;
-$border-style:solid !default;
-$border-color:$gray_light !default;
-$border-hover:$gray !default;
-$border-radius-l:4px !default;
-$border-radius-s:2px !default;
-$border-radius-c:50% !default;
+$border_width:1px !default;
+$border_style:solid !default;
+$border_color:$gray_light !default;
+$border_base:$border_width $border_style $border_color !default;
+$border_hover:$gray !default;
+
+$border_radius_normal:4px !default;
+$border_radius_small:2px !default;
+$border_radius_circle:50% !default;
 
 //font*****************************************
 $font_size:14px !default;
 $font_color:$black !default;
 $font_disabled:#bbb !default;
+
+//bg**********************************************
+$bg_bace:$white !default;
+
+//disable
+$disable_bg:$gray_lighter !default;
+$disable_color:#bbb !default;
+$disable_border:$gray !default;

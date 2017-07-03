@@ -1,11 +1,16 @@
 @charset "UTF-8";
 
-// mixins
+//mixins
 @import './mixins/mixins';
 
+//common
+@import './components/normalize';
 @import './components/var';
 @import './components/reset';
 
 //grid
 @import './components/iRow';
 @import './components/iCol';
+
+//button
+@import './components/button';

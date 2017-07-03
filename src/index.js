@@ -1,8 +1,10 @@
 import { iRow, iCol } from './components/grid';
+import iButton from './components/iButton'
 
 const ivu=[
     iCol,
-    iRow
+    iRow,
+    iButton
 ];
 
 const install=function(Vue,opt={}){
@@ -27,5 +29,6 @@ if (typeof window !== 'undefined' && window.Vue) {
 export {
     install,
     iCol,
-    iRow
+    iRow,
+    iButton
 }

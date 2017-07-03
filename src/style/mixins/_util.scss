@@ -1,0 +1,7 @@
+//禁止文字选中
+@mixin user-select{
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
