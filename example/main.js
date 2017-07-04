@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import ivuCss from '../src/style/ivu.css' 
 import * as ivu from '../src'
+import './assets/font/iconfont.css'
 
 Vue.config.productionTip = false
 

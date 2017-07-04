@@ -1,10 +1,14 @@
 import { iRow, iCol } from './components/grid';
 import iButton from './components/iButton'
+import iButtonGroup from './components/iButtonGroup'
+import iBadge from './components/iBadge'
 
 const ivu=[
     iCol,
     iRow,
-    iButton
+    iButton,
+    iButtonGroup,
+    iBadge
 ];
 
 const install=function(Vue,opt={}){
@@ -30,5 +34,7 @@ export {
     install,
     iCol,
     iRow,
-    iButton
+    iButton,
+    iButtonGroup,
+    iBadge
 }

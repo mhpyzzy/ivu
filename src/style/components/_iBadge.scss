@@ -1,0 +1,45 @@
+@charset "UTF-8";
+/*i-badge*/
+$prefix_badge:'i-badge';
+$badge_bg:$danger !default;
+$badge_radius:10px !default;
+$badge_font_size:12px !default;
+$badge_padding:6px !default;
+$badge_size:18px !default;
+$badge_font_color:$white !default;
+
+.#{$prefix_badge}{
+    position:relative;
+    vertical-align: middle;
+    display: inline-block;
+
+    & .i_badge_content{
+        display: inline-block;
+        background-color: $badge_bg;
+        border-radius:$badge_radius;
+        color:$badge_font_color;
+        font-size:$badge_font_size;
+        line-height:$badge_size;
+        padding:0 $badge_padding;
+        text-align: center;
+        white-space: nowrap;
+        border: 1px solid $badge_font_color;
+
+        &.is_fixed{
+            position: absolute;
+            top:($badge_size / 2) + 1;
+            transform: translateY(-50%) translateX(100%);
+
+            &.is_dot{
+                right: 5px;
+            }
+        }
+
+        &.is_dot{
+            size: 8px 8px;
+            padding: 0;
+            right: 0;
+            border-radius: 50%;
+        }
+    }
+}

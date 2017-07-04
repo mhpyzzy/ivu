@@ -4,13 +4,15 @@
 @import './mixins/mixins';
 
 //common
-@import './components/normalize';
-@import './components/var';
-@import './components/reset';
+@import './common/normalize';
+@import './common/var';
+@import './common/reset';
+@import './common/transition';
 
 //grid
 @import './components/iRow';
 @import './components/iCol';
 
-//button
-@import './components/button';
+//components
+@import './components/iButton';
+@import './components/iBadge';

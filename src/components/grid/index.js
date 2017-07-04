@@ -1,5 +1,5 @@
-import iCol from './col'
-import iRow from './row'
+import iCol from './iCol'
+import iRow from './iRow'
 
 
 //单独安装时使用

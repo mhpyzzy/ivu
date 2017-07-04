@@ -12,9 +12,45 @@
 @mixin creatButtonColor($prefix_button,$colorMap){
     @each $color,$value in $colorMap {
         .#{$prefix_button}-#{$color} {
-            border-color:nth($value,1);
-            color:nth($value,2);
-            background-color:nth($value,3);
+            @if($color=='text'){
+                border:nth($value,1);
+                color:nth($value,2);
+                background-color:nth($value,3);
+                padding-left:0;
+                padding-right:0;
+                &:hover,
+                &:focus{
+                    color:lighten(nth($value,2),15%);
+                }
+                &:active{
+                    color:darken(nth($value,2),10%);
+                }
+            }@else if($color=='disabled'){
+                &,
+                &:hover,
+                &:focus{
+                    cursor:not-allowed;
+                    color:nth($value,2);
+                    border-color:nth($value,3);
+                    background-color:nth($value,3);
+                }
+            }@else{
+                border-color:nth($value,1);
+                color:nth($value,2);
+                background-color:nth($value,3);
+
+                &:hover,
+                &:focus{
+                    color:nth($value,2);
+                    border-color:lighten(nth($value,3),5%);
+                    background-color:lighten(nth($value,3),5%);
+                }
+                &:active{
+                    color:nth($value,2);
+                    border-color:darken(nth($value,3),15%);
+                    background-color:darken(nth($value,3),15%);
+                }
+            }
         }
     }
 }

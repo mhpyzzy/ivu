@@ -22,7 +22,8 @@
       </i-col>
       <!--内容区-->
       <i-col :span="18">
-        <component :is="curComponent"></component>
+        <!--<component :is="curComponent"></component>-->
+        <iBadge></iBadge>
       </i-col>
     </i-row>
   </div>
@@ -31,8 +32,9 @@
 <script>
     import grid from './components/grid'
     import iButton from './components/iButton'
+    import iBadge from './components/iBadge'
     const componentList={
-      grid,iButton
+      grid,iButton,iBadge
     };
 
     export default {
@@ -48,20 +50,27 @@
     }
 
 </script>
-<style>
+<style scoped>
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-align: center;
+    /*text-align: center;*/
     color: #2c3e50;
     margin-top: 60px;
   }
 
 .header{
   margin-bottom:50px;
+  text-align: center;
 }
 li{
   list-style: none;
+  width:50%;
+  line-height: 30px;
+  margin:10px auto;
+  text-align: center;
+  cursor:pointer;
+  border:1px solid #0096fa;
 }
 </style>

@@ -1,0 +1,122 @@
+/*i-button*/
+//var
+$prefix_button:'i-button';
+$typeList:primary,success,warning,danger,info,disabled;
+
+$button_border_radius:$border_radius_normal !default;
+$button_font_size:14px !default;
+$button_padding_vertical:10px !default;
+$button_padding_horizontal:15px !default;
+$button_space:10px !default;
+
+//default
+.#{$prefix_button}{
+    display: inline-block;
+    font-size: $button_font_size;
+    padding:$button_padding_vertical $button_padding_horizontal;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+    border: $border_base;
+    background: $white;
+    color: $black;
+    -webkit-appearance: none;
+    text-align: center;
+    box-sizing: border-box;
+    outline: none;
+    border-radius:$border_radius_normal;
+    margin: 0;
+    & + .i-button {
+      margin-left: $button_space;
+    }
+    @include user-select;
+
+    i{font-size:$button_font_size; }
+    
+    &:hover,
+    &focus{
+        color:lighten($primary,20%);
+        border-color:lighten($primary,20%);
+    }
+
+    &:active{
+        color:darken($primary,10%);
+        border-color:darken($primary,10%);
+        outline: none;
+    }
+
+    &::-moz-focus-inner {
+      border: 0;
+    }
+}
+
+//sizeMap: font-size,padding_vertical,padding_horizontal
+$buttonSizeMap:(
+    larger:$button_font_size + 2 $button_padding_vertical + 1 $button_padding_horizontal + 4 ,
+    samll:$button_font_size - 2  $button_padding_vertical - 3  $button_padding_horizontal - 6 ,
+    mini:$button_font_size - 2   $button_padding_vertical - 6 $button_padding_horizontal - 11 ,
+);
+@include creatButtonSize($prefix_button,$buttonSizeMap);
+
+
+//colorMap:border-color,color,background
+$buttonColorMap:(
+    // default:#c4c4c4 $black  $white,
+    primary:$primary $white $primary,
+    success:$success $white $success,
+    warning:$warning $white $warning,
+    danger:$danger $white $danger,
+    info:$info $white $info,
+    text:none $primary transparent,
+    disabled:$disable_border $disable_color $disable_bg,
+);
+@include creatButtonColor($prefix_button,$buttonColorMap);
+
+.#{$prefix_button}-group{
+    @include clearfix;
+    display: inline-block;
+    vertical-align:middle;
+
+    .#{$prefix_button}{
+        position: relative;
+        float:left;
+
+        & + .#{$prefix_button}{
+            margin-left:0;
+        }
+        &:hover,
+        &:active,
+        &:focus{
+            z-index:1;
+        }
+        &:first-child{
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        &:last-child{
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+        &:not(:last-child):not(:first-child){
+            border-radius:0;
+        }
+        &:not(:last-child){
+            margin-right:-1px;
+        }
+    }
+
+    @each $type in $typeList{
+        .#{$prefix_button}-#{$type}{
+            &:first-child{
+                border-right-color:$border_color;
+            }
+            &:last-child{
+                border-left-color:$border_color;
+            }
+            &:not(:first-child):not(:last-child){
+                border-left-color:$border_color;
+            }
+        }
+    }
+
+}
