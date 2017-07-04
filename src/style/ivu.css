@@ -522,10 +522,8 @@ hr {
   transform: translateY(-30px); }
 
 /* i-row*/
-.i-container {
-  overflow: hidden; }
-  .i-container div {
-    box-sizing: border-box; }
+.i-row div {
+  box-sizing: border-box; }
 
 .i-row:after {
   content: " ";
@@ -1240,12 +1238,14 @@ hr {
     border: 1px solid #fff; }
     .i-badge .i_badge_content.is_fixed {
       position: absolute;
-      top: 10px;
+      top: 0;
+      right: 10px;
       transform: translateY(-50%) translateX(100%); }
       .i-badge .i_badge_content.is_fixed.is_dot {
         right: 5px; }
     .i-badge .i_badge_content.is_dot {
-      size: 8px 8px;
+      width: 10px;
+      height: 10px;
       padding: 0;
       right: 0;
       border-radius: 50%; }

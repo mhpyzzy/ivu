@@ -17,12 +17,12 @@
     export default {
         name:'iBadge',
         props:{
-            value:Number,
+            value:[Number,String],
             max:Number,
             dot:Boolean,
             hidden:Boolean
         },
-        cumputed:{
+        computed:{
             badegVal(){
                 if(this.dot) return;
                 let _value=this.value;

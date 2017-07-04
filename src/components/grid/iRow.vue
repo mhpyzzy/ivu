@@ -1,10 +1,10 @@
 <template>
-    <div class="i-container">
+    <!--<div class="i-container" :style="containerStyle">-->
         <div :class="type=='flex'?'i-row-flex':'i-row'" 
             :style="rowStyle">
             <slot></slot>
         </div>
-    </div>
+    <!--</div>-->
 </template>
 
 <script>

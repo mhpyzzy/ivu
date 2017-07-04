@@ -27,7 +27,8 @@ $badge_font_color:$white !default;
 
         &.is_fixed{
             position: absolute;
-            top:($badge_size / 2) + 1;
+            top:0;
+            right:($badge_size / 2) + 1;
             transform: translateY(-50%) translateX(100%);
 
             &.is_dot{
@@ -36,7 +37,8 @@ $badge_font_color:$white !default;
         }
 
         &.is_dot{
-            size: 8px 8px;
+            width:10px;
+            height:10px;
             padding: 0;
             right: 0;
             border-radius: 50%;

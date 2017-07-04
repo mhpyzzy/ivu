@@ -22,8 +22,7 @@
       </i-col>
       <!--内容区-->
       <i-col :span="18">
-        <!--<component :is="curComponent"></component>-->
-        <iBadge></iBadge>
+        <component :is="curComponent"></component>
       </i-col>
     </i-row>
   </div>

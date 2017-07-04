@@ -1,13 +1,12 @@
 @charset "UTF-8";
 /* i-row*/
-.i-container{
+// .i-container{
+// }
+
+.i-row{
     div{
         box-sizing: border-box;
     }
-    overflow: hidden;
-}
-
-.i-row{
     @include clearfix;
 }
 
