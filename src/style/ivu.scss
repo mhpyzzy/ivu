@@ -9,6 +9,9 @@
 @import './common/reset';
 @import './common/transition';
 
+/*iconfont*/
+@import './font/iconfont.css';
+
 //grid
 @import './components/iRow';
 @import './components/iCol';
@@ -16,3 +19,4 @@
 //components
 @import './components/iButton';
 @import './components/iBadge';
+@import './components/iTag';

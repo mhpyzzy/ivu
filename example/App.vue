@@ -32,8 +32,9 @@
     import grid from './components/grid'
     import iButton from './components/iButton'
     import iBadge from './components/iBadge'
+    import iTag from './components/iTag'
     const componentList={
-      grid,iButton,iBadge
+      grid,iButton,iBadge,iTag
     };
 
     export default {

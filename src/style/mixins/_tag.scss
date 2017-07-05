@@ -1,0 +1,14 @@
+@mixin creatTagType($prefix_tag,$typeMap){
+    @each $type,$value in $typeMap{
+        .#{$prefix_tag}-#{$type}{
+            background-color:nth($value,1);
+            border-color:nth($value,2);
+            color:nth($value,3);
+
+            .tag_close:hover{
+                background-color:nth($value,3);
+                color:#fff;
+            }
+        }
+    }
+}

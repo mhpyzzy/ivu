@@ -1,0 +1,61 @@
+@charset "UTF-8";
+/*i-tag*/
+//var
+$prefix_tag:'i-tag';
+
+$i_tag_padding: 0 5px !default;
+$i_tag_bg: $silver_light !default;
+$i_tag_color: $white !default;
+$i_tag_close_color: #666;
+$i_tag_font_size: 12px;
+$i_tag_border_radius: 4px;
+
+
+.#{$prefix_tag}{
+    background-color: $i_tag_bg;
+    display: inline-block;
+    padding: $i_tag_padding;
+    // height: 24px;
+    line-height: 22px;
+    font-size: $i_tag_font_size;
+    color: $i_tag_color;
+    border-radius: $i_tag_border_radius;
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    white-space: nowrap;
+
+    &.i-shadow{
+        box-shadow: #000 2px 2px 5px;
+    }
+    .tag_close{
+        position: relative;
+        display: inline-block;
+        border-radius: 50%;
+        text-align: center;
+        cursor:pointer;
+        font-size: 12px;
+        transform: scale(.75, .75);
+        height: 18px;
+        width: 18px;
+        line-height: 18px;
+        vertical-align: middle;
+        top: -1px;
+        right: -2px;
+
+        &:hover {
+            background-color: $i_tag_color;
+            color: $i_tag_bg;
+        }
+    }
+}
+// tag color map:primary/gray/success/warning/danger
+// background,border-color,font-color
+$tagColorMap:(
+    gray:$gray_light $gray_light $link,
+    primary:rgba($primary,0.2) rgba($primary,0.3) $primary,
+    success:rgba($success,0.2) rgba($success,0.3) $success,
+    warning:rgba($warning,0.2) rgba($warning,0.3) $warning,
+    danger:rgba($danger,0.2) rgba($danger,0.3) $danger,
+);
+
+@include creatTagType($prefix_tag,$tagColorMap);
